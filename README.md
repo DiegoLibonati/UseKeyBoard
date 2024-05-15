@@ -54,6 +54,14 @@ export const HomePage = (): JSX.Element => {
 
 Ideally, the hook should be used in the parent component of the current page being rendered. That is to say, we will call it only once based on the page we are rendering. In this case in HomePage as an example.
 
+### Portfolio Link
+
+`Coming Soon...`
+
+### Npm PACKAGE Link
+
+`https://www.npmjs.com/package/usekeyboard-react`
+
 ### Props
 
 Prop | Description | Type | Default
