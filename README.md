@@ -34,7 +34,11 @@ export const HomePage = (): JSX.Element => {
       keys: [
         {
           key: "Enter",
-          fn: () => console.log("Hola"),
+          fn: () => console.log("Hi Enter"),
+        },
+        {
+          key: "ArrowRight|ArrowLeft",
+          fn: () => console.log("Hi Arrows Right and Left"),
         },
       ],
       dependencies: [],
@@ -69,6 +73,42 @@ Prop | Description | Type | Default
 `keys` | `keys` refers to the set of key identifiers to be pressed together with the function to be executed. | `{ key: string; fn: () => void }[]` | -
 `dependencies` | The `dependencies` dependency is used to indicate to React when it should recreate the `onKeyPress` function. If any value in `dependencies` changes between renders, React will recreate the `onKeyPress` function with the new values. If `dependencies` doesn't change, React will reuse the previously memoized `onKeyPress` function. | `React.DependencyList` | -
 `debug` | Set to `true` or `false` to debug useKeyBoard Hook | `boolean` | -
+
+Example if debug prop is in true:
+
+![debug-true](./src/assets/image.png)
+
+## Multiple Keys with the same Function
+
+If you want to declare 2 or more keys that have the same function to be executed you can use the string “|”.
+
+In this case the keys 0, 1, 2, 3, 3, 4, 5, 6, 7, 8 and 9 will execute the command in console: Hi, im a number.
+
+```jsx
+import { useKeyBoard } from "usekeyboard-react";
+import "./App.css";
+
+export const HomePage = (): JSX.Element => { 
+  useKeyBoard({
+    config: {
+      keys: [
+        {
+          key: "0|1|2|3|4|5|6|7|8|9",
+          fn: () => console.log("Hi, im a number"),
+        },
+      ],
+      dependencies: [],
+      debug: true,
+    },
+  });
+
+  return (
+    <main>
+      <h1>Home Page</h1>
+    </main>
+  );
+};
+```
 
 ### Another Example
 
@@ -152,7 +192,7 @@ const KEYS = [
         fn: () => console.log("ArrowDown Pressed")
     },
     {
-        key: "ArrowDown",
+        key: "Enter",
         fn: () => console.log("Enter Pressed")
     }
 ]
@@ -180,7 +220,7 @@ const KEYS = [
         fn: () => handlePressArrowDown()
     },
     {
-        key: "ArrowDown",
+        key: "Enter",
         fn: () => console.log("Enter Pressed")
     }
 ]
