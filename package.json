@@ -1,6 +1,6 @@
 {
   "name": "usekeyboard-react",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "UseKeyBoard is a React library that executes code depending on the key pressed.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc -p ."
   },
-  "keywords": ["keypress", "keydown", "react", "customhook", "onKeyPress"],
+  "keywords": [
+    "keypress",
+    "keydown",
+    "react",
+    "customhook",
+    "onKeyPress"
+  ],
   "author": "Diego Martin Libonati <diego.libonati1998@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -18,7 +24,7 @@
   },
   "peerDependencies": {
     "react": ">=18.3.1"
-  }, 
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/DiegoLibonati/UseKeyBoard.git",

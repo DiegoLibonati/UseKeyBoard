@@ -9,7 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "lib": ["es6", "dom", "es2016"]
   },
   "include": ["src/**/*"]
 }
