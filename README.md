@@ -26,9 +26,9 @@ import { useKeyBoard } from "usekeyboard-react";
 import "./App.css";
 
 export const HomePage = (): JSX.Element => {
-  const [count, setCount] = useState<number>(0)
+  const [count, setCount] = useState < number > 0;
 
-  // Initializes the hook on the current page, configuring the keys. 
+  // Initializes the hook on the current page, configuring the keys.
   useKeyBoard({
     config: {
       keys: [
@@ -39,6 +39,13 @@ export const HomePage = (): JSX.Element => {
         {
           key: "ArrowRight|ArrowLeft",
           fn: () => console.log("Hi Arrows Right and Left"),
+        },
+        {
+          key: "a|b",
+          fn: (e) => {
+            if (e.key === "a") console.log("i am A");
+            if (e.key === "b") console.log("i am B");
+          },
         },
       ],
       dependencies: [],
@@ -68,11 +75,11 @@ Ideally, the hook should be used in the parent component of the current page bei
 
 ### Props
 
-Prop | Description | Type | Default
----- | ----------- | ------- | -------
-`keys` | `keys` refers to the set of key identifiers to be pressed together with the function to be executed. | `{ key: string; fn: () => void }[]` | -
-`dependencies` | The `dependencies` dependency is used to indicate to React when it should recreate the `onKeyPress` function. If any value in `dependencies` changes between renders, React will recreate the `onKeyPress` function with the new values. If `dependencies` doesn't change, React will reuse the previously memoized `onKeyPress` function. | `React.DependencyList` | -
-`debug` | Set to `true` or `false` to debug useKeyBoard Hook | `boolean` | -
+| Prop           | Description                                                                                                                                                                                                                                                                                                                                | Type                                | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | ------- |
+| `keys`         | `keys` refers to the set of key identifiers to be pressed together with the function to be executed.                                                                                                                                                                                                                                       | `{ key: string; fn: (e: KeyboardEvent) => void }[]` | -       |
+| `dependencies` | The `dependencies` dependency is used to indicate to React when it should recreate the `onKeyPress` function. If any value in `dependencies` changes between renders, React will recreate the `onKeyPress` function with the new values. If `dependencies` doesn't change, React will reuse the previously memoized `onKeyPress` function. | `React.DependencyList`              | -       |
+| `debug`        | Set to `true` or `false` to debug useKeyBoard Hook                                                                                                                                                                                                                                                                                         | `boolean`                           | -       |
 
 Example if debug prop is in true:
 
@@ -88,13 +95,49 @@ In this case the keys 0, 1, 2, 3, 3, 4, 5, 6, 7, 8 and 9 will execute the comman
 import { useKeyBoard } from "usekeyboard-react";
 import "./App.css";
 
-export const HomePage = (): JSX.Element => { 
+export const HomePage = (): JSX.Element => {
   useKeyBoard({
     config: {
       keys: [
         {
           key: "0|1|2|3|4|5|6|7|8|9",
           fn: () => console.log("Hi, im a number"),
+        },
+      ],
+      dependencies: [],
+      debug: true,
+    },
+  });
+
+  return (
+    <main>
+      <h1>Home Page</h1>
+    </main>
+  );
+};
+```
+
+## Using the keyboard event (KeyboardEvent)
+
+We can also pass inside our execution function the `keydown` event. 
+
+`e` refers to Javascript's KeyboardEvent.
+
+```jsx
+import { useKeyBoard } from "usekeyboard-react";
+import "./App.css";
+
+export const HomePage = (): JSX.Element => {
+  // Initializes the hook on the current page, configuring the keys.
+  useKeyBoard({
+    config: {
+      keys: [
+        {
+          key: "a|b",
+          fn: (e) => {
+            if (e.key === "a") console.log("i am A");
+            if (e.key === "b") console.log("i am B");
+          },
         },
       ],
       dependencies: [],
@@ -187,49 +230,48 @@ For better usage, we can create a variable that contains our array of keys, savi
 
 ```jsx
 const KEYS = [
-    {
-        key: "ArrowDown",
-        fn: () => console.log("ArrowDown Pressed")
-    },
-    {
-        key: "Enter",
-        fn: () => console.log("Enter Pressed")
-    }
-]
+  {
+    key: "ArrowDown",
+    fn: () => console.log("ArrowDown Pressed"),
+  },
+  {
+    key: "Enter",
+    fn: () => console.log("Enter Pressed"),
+  },
+];
 
 useKeyBoard({
-    config: {
-        keys: KEYS,
-        dependencies: [],
-        debug: true,
-    },
+  config: {
+    keys: KEYS,
+    dependencies: [],
+    debug: true,
+  },
 });
 ```
 
 Another example:
 
 ```jsx
-
 const handlePressArrowDown = (): void => {
-    console.log("ArrowDown Pressed")
-}
+  console.log("ArrowDown Pressed");
+};
 
 const KEYS = [
-    {
-        key: "ArrowDown",
-        fn: () => handlePressArrowDown()
-    },
-    {
-        key: "Enter",
-        fn: () => console.log("Enter Pressed")
-    }
-]
+  {
+    key: "ArrowDown",
+    fn: () => handlePressArrowDown(),
+  },
+  {
+    key: "Enter",
+    fn: () => console.log("Enter Pressed"),
+  },
+];
 
 useKeyBoard({
-    config: {
-        keys: KEYS,
-        dependencies: [],
-        debug: true,
-    },
+  config: {
+    keys: KEYS,
+    dependencies: [],
+    debug: true,
+  },
 });
 ```

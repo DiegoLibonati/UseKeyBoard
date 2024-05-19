@@ -7,7 +7,7 @@ export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
   const onKeyPress = useCallback((e: KeyboardEvent) => {
     keys.forEach((element) => {
       if (element.key === "|" && e.key === element.key) {
-        element.fn();
+        element.fn(e);
         return;
       }
 
@@ -19,13 +19,13 @@ export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
         }
 
         if (multipleKeys.includes(e.key)) {
-          element.fn();
+          element.fn(e);
         }
         return;
       }
 
       if (e.key === element.key) {
-        element.fn();
+        element.fn(e);
         return;
       }
     });
