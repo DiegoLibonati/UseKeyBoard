@@ -1,1 +1,1 @@
-export { useKeyBoard } from "./useKeyBoard";
+export { useKeyBoard } from "./hooks/useKeyBoard";

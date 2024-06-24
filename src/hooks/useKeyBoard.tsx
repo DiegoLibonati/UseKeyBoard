@@ -1,5 +1,14 @@
 import { useCallback, useEffect } from "react";
-import { UseKeyBoard, UseKeyBoardProps } from "./entities/entities";
+
+export type UseKeyBoard = NonNullable<unknown>;
+
+export interface UseKeyBoardProps {
+  config: {
+    keys: { key: string; fn: (e: KeyboardEvent) => void }[];
+    dependencies: React.DependencyList;
+    debug: boolean;
+  };
+}
 
 export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
   const { keys, debug, dependencies } = config;

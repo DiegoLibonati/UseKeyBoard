@@ -1,0 +1,6 @@
+src/
+.eslintrc.cjs
+index.html
+tsconfig.json
+vite.config.ts
+yarn.lock
