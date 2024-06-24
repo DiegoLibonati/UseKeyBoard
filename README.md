@@ -75,11 +75,11 @@ Ideally, the hook should be used in the parent component of the current page bei
 
 ### Props
 
-| Prop           | Description                                                                                                                                                                                                                                                                                                                                | Type                                | Default |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------- | ------- |
+| Prop           | Description                                                                                                                                                                                                                                                                                                                                | Type                                                | Default |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------- | ------- |
 | `keys`         | `keys` refers to the set of key identifiers to be pressed together with the function to be executed.                                                                                                                                                                                                                                       | `{ key: string; fn: (e: KeyboardEvent) => void }[]` | -       |
-| `dependencies` | The `dependencies` dependency is used to indicate to React when it should recreate the `onKeyPress` function. If any value in `dependencies` changes between renders, React will recreate the `onKeyPress` function with the new values. If `dependencies` doesn't change, React will reuse the previously memoized `onKeyPress` function. | `React.DependencyList`              | -       |
-| `debug`        | Set to `true` or `false` to debug useKeyBoard Hook                                                                                                                                                                                                                                                                                         | `boolean`                           | -       |
+| `dependencies` | The `dependencies` dependency is used to indicate to React when it should recreate the `onKeyPress` function. If any value in `dependencies` changes between renders, React will recreate the `onKeyPress` function with the new values. If `dependencies` doesn't change, React will reuse the previously memoized `onKeyPress` function. | `React.DependencyList`                              | -       |
+| `debug`        | Set to `true` or `false` to debug useKeyBoard Hook                                                                                                                                                                                                                                                                                         | `boolean`                                           | -       |
 
 Example if debug prop is in true:
 
@@ -119,7 +119,7 @@ export const HomePage = (): JSX.Element => {
 
 ## Using the keyboard event (KeyboardEvent)
 
-We can also pass inside our execution function the `keydown` event. 
+We can also pass inside our execution function the `keydown` event.
 
 `e` refers to Javascript's KeyboardEvent.
 
@@ -275,3 +275,15 @@ useKeyBoard({
   },
 });
 ```
+
+## Develop
+
+If you want to develop or collaborate with this project, please follow point by point:
+
+1. Clone the project with `git clone https://github.com/DiegoLibonati/UseKeyBoard.git`.
+2. Enter the folder where you cloned the project
+3. Then run the `yarn install` or `npm install` command to install the dependencies to build the project.
+4. Execute the command: `yarn run dev`
+5. Use the debug `true` in useKeyBoard in the `App.tsx` component and open the console for development.
+6. You can now modify the file: `useKeyBoard.tsx`.
+7. Create a pull request with your changes
