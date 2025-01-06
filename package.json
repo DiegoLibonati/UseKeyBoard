@@ -1,6 +1,6 @@
 {
   "name": "usekeyboard-react",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "UseKeyBoard is a React library that executes code depending on the key pressed.",
   "type": "module",
   "main": "dist/usekeyboard-react.umd.js",

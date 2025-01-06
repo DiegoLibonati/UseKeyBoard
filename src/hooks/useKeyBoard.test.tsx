@@ -8,6 +8,7 @@ interface UseKeyBoardTestComponentProps {
 }
 
 const fnKeyA = jest.fn();
+const fnKeyP = jest.fn();
 const fnKeyArrows = jest.fn();
 const fnKey0 = jest.fn();
 const fnKey1 = jest.fn();
@@ -21,6 +22,10 @@ const keys: UseKeyBoardProps["config"]["keys"] = [
       if (key === "0") return fnKey0();
       if (key === "1") return fnKey1();
     },
+  },
+  {
+    key: "p|",
+    fn: fnKeyP,
   },
   {
     key: "ArrowRight|ArrowLeft",
@@ -71,4 +76,12 @@ test("It must register the keys for the numbers 0 and 1 equally. In addition, pr
   await user.keyboard("1");
 
   expect(fnKey1).toHaveBeenCalledTimes(1);
+});
+
+test("It should not register keys if multiple keys are passed in the same record but only one key is passed.", async () => {
+  render(<UseKeyBoardTestComponent config={config}></UseKeyBoardTestComponent>);
+
+  await user.keyboard("p");
+
+  expect(fnKeyP).toHaveBeenCalledTimes(0);
 });
