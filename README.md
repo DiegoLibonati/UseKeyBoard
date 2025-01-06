@@ -280,10 +280,14 @@ useKeyBoard({
 
 If you want to develop or collaborate with this project, please follow point by point:
 
-1. Clone the project with `git clone https://github.com/DiegoLibonati/UseKeyBoard.git`.
-2. Enter the folder where you cloned the project
-3. Then run the `yarn install` or `npm install` command to install the dependencies to build the project.
-4. Execute the command: `yarn run dev`
-5. Use the debug `true` in useKeyBoard in the `App.tsx` component and open the console for development.
-6. You can now modify the file: `useKeyBoard.tsx`.
-7. Create a pull request with your changes
+1. Clone the project with `git clone https://github.com/DiegoLibonati/UseKeyBoard.git`
+2. Join to the correct path of the clone
+3. Execute: `yarn install` or `npm install`
+4. Execute the command: `yarn storybook`
+5. Enjoy and develop
+
+## Testing
+
+1. Join to the correct path of the clone
+2. Execute: `yarn test` or `npm test`
+

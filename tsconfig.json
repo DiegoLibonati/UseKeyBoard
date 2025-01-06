@@ -1,17 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "declaration": true,
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
+    "target": "es2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
     "jsx": "react-jsx",
-    "outDir": "./dist",
-    "lib": ["es6", "dom", "es2016"]
+    "allowImportingTsExtensions": true,
+    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "useUnknownInCatchVariables": false,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/App.tsx", "src/main.tsx"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
