@@ -68,6 +68,6 @@
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "npx jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose"
   }
 }
