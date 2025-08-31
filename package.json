@@ -1,6 +1,6 @@
 {
   "name": "usekeyboard-react",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "UseKeyBoard is a React library that executes code depending on the key pressed.",
   "type": "module",
   "main": "dist/usekeyboard-react.umd.js",
@@ -20,11 +20,7 @@
     "url": "https://github.com/DiegoLibonati/UseKeyBoard.git",
     "directory": "packages/usekeyboard-react"
   },
-  "dependencies": {
-    "@types/jest": "^29.5.13",
-    "@types/node": "^20.10.6",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+  "peerDependencies": {
     "react": ">=18.3.1",
     "react-dom": ">=18.3.1"
   },
@@ -43,6 +39,10 @@
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
@@ -57,11 +57,9 @@
     "typescript": "^5.4.5",
     "vite": "^5.3.1",
     "vite-plugin-dts": "^4.4.0",
-    "vite-tsconfig-paths": "^5.1.4"
-  },
-  "peerDependencies": {
-    "react": ">=18.3.1",
-    "react-dom": ">=18.3.1"
+    "vite-tsconfig-paths": "^5.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "scripts": {
     "dev": "vite",
