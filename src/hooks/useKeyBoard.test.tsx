@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
-import { useKeyBoard, UseKeyBoardProps } from "./useKeyBoard";
+import { useKeyBoard, UseKeyBoardProps } from "@src/hooks/useKeyBoard";
 
 interface UseKeyBoardTestComponentProps {
   config: UseKeyBoardProps["config"];

@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react";
 
-import { useKeyBoard } from "../../hooks/useKeyBoard";
+import { useKeyBoard } from "@src/hooks/useKeyBoard";
 
 const meta: Meta = {
   title: "Hooks/useKeyBoard",

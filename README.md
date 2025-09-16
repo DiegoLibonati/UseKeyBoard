@@ -291,3 +291,4 @@ If you want to develop or collaborate with this project, please follow point by 
 1. Join to the correct path of the clone
 2. Execute: `yarn test` or `npm test`
 
+## Known Issues
