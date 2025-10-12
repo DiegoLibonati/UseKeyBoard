@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "moduleResolution": "node",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
-      "@tests/*": ["tests/*"],
+      "@tests/*": ["tests/*"]
     }
   }
 }

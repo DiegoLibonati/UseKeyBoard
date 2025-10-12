@@ -1,9 +1,11 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { UseKeyBoard } from "@src/entities/app";
 import { UseKeyBoardProps } from "@src/entities/props";
 
 export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
+  const [keysLoaded, setKeysLoaded] = useState<string[]>([]);
+
   const { keys, debug, dependencies } = config;
 
   const onKeyPress = useCallback((e: KeyboardEvent) => {
@@ -40,6 +42,12 @@ export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
       window.removeEventListener("keydown", onKeyPress);
     };
   }, [onKeyPress]);
+
+  useEffect(() => {
+    if (keys.length === 0) return;
+
+    keys.forEach((element) => setKeysLoaded([...keysLoaded, element.key]));
+  }, []);
 
   useEffect(() => {
     if (debug && keys.length > 0) {
@@ -88,5 +96,6 @@ export const useKeyBoard = ({ config }: UseKeyBoardProps): UseKeyBoard => {
       return console.log("No keys have been added to the key Array ✅.");
     }
   }, []);
-  return {};
+
+  return { keysLoaded: keysLoaded };
 };
