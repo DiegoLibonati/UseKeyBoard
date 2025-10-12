@@ -1,7 +1,9 @@
 import { DocsLoaded } from "@src/assets/docs/loaded.png";
 
-export default {
+const assets = {
   docs: {
     loaded: DocsLoaded,
   },
 };
+
+export default assets;
