@@ -4,28 +4,29 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  publicDir: "./public",
   resolve: {
     alias: {
       "@src": path.resolve(__dirname, "./src"),
-      "@tests": path.resolve(__dirname, "./tests")
-    }
+      "@tests": path.resolve(__dirname, "./tests"),
+    },
   },
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "usekeyboard-react",
       fileName: (format) => `usekeyboard-react.${format}.js`,
-      formats: ["es", "umd"]
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
-          "react-dom": "ReactDOM"
-        }
-      }
+          "react-dom": "ReactDOM",
+        },
+      },
     },
-    emptyOutDir: false
-  }
+    emptyOutDir: false,
+  },
 });
