@@ -83,7 +83,7 @@ Ideally, the hook should be used in the parent component of the current page bei
 
 Example if debug prop is in true:
 
-![debug-true](./public/assets/docs/loaded.png)
+![debug-true](./static/assets/docs/loaded.png)
 
 ## Multiple Keys with the same Function
 
