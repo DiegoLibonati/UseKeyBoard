@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "EditorConfig.EditorConfig",
+    "Orta.vscode-jest",
+    "firsttris.vscode-jest-runner",
+    "clinyong.vscode-css-modules",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml",
+    "eamodio.gitlens",
+    "usernamehw.errorlens",
+    "mikestead.dotenv"
+  ]
+}

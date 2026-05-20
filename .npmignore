@@ -4,10 +4,12 @@ __tests__/
 static/
 
 # Development
-index.html
 .storybook/
 coverage/
 storybook-static/
+
+# Sourcemaps (kept locally for dev/Storybook, not shipped to npm)
+dist/**/*.map
 
 # Config
 eslint.config.js
@@ -26,3 +28,4 @@ tsconfig.storybook.json
 # Lock files
 package-lock.json
 *.lock
+
